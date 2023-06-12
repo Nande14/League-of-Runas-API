@@ -6,6 +6,6 @@
       - com
         - leagueofrunas
           - controller
-          - model
+          - models
           - repository
           - service
