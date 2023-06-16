@@ -4,7 +4,7 @@
   - main
     - java
       - com
-        - leagueofrunas
+        - runes
           - controller
           - models
           - repository
