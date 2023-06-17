@@ -1,6 +1,11 @@
 package com.example.League.of.Runes.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -41,5 +46,15 @@ public class Guias {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "usuario")
+    private Usuario usuario;
+
+    @OneToMany(mappedBy = "guias")
+    private List<Campeoes  > campeoes;
+
+    @OneToMany(mappedBy = "guias")
+    private List<Balanceamento  > balanceamento;
 
 }

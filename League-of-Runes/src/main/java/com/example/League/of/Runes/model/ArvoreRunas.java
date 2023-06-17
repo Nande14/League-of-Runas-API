@@ -1,16 +1,22 @@
 package com.example.League.of.Runes.model;
 
-import jakarta.persistence.Entity;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
+
+import jakarta.persistence.*;
 
 @Data
 @NoArgsConstructor
 @Entity
 @Getter
 @Setter
+
+
+
 public class ArvoreRunas {
 
     public String nome;
@@ -19,7 +25,7 @@ public class ArvoreRunas {
 
     public String tipo;
 
-    
+   
     public ArvoreRunas(String nome, String cor, String tipo) {
         this.nome = nome;
         this.cor = cor;
@@ -51,5 +57,12 @@ public class ArvoreRunas {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "usuario")
+    private Usuario usuario;
+     
+    @OneToMany(mappedBy = "arvoreRunas")
+    private List<Runas> runas;
 
 }

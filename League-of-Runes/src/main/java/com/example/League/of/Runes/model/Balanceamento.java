@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import jakarta.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -43,5 +44,11 @@ public class Balanceamento {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    
+    
+
+     @ManyToOne
+    @JoinColumn(name="guias")
+    private Guias guias;
 
 }

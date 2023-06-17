@@ -1,6 +1,8 @@
 package com.example.League.of.Runes.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -30,6 +32,10 @@ public class Runas extends ArvoreRunas {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+     @ManyToOne
+    @JoinColumn(name="arvoreRunas")
+    private ArvoreRunas arvoreRunas;
 
    
     

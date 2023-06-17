@@ -1,5 +1,9 @@
 package com.example.League.of.Runes.model;
 
+import java.util.List;
+
+import jakarta.persistence.OneToMany;
+
 public class Usuario {
 
     private String nickname;
@@ -37,4 +41,12 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+     @OneToMany(mappedBy = "usuario")
+    private List<Guias> guias;
+
+     @OneToMany(mappedBy = "usuario")
+    private List<ArvoreRunas> arvoreRunas;
+
+   
 }

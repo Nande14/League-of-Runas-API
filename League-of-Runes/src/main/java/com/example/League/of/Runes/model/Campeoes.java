@@ -1,5 +1,8 @@
 package com.example.League.of.Runes.model;
 
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
 public class Campeoes {
     public String nome;
 
@@ -20,5 +23,10 @@ public class Campeoes {
     public void setFuncao(String funcao) {
         this.funcao = funcao;
     }
+
+    @ManyToOne
+    @JoinColumn(name="guias")
+    private Guias guias;
+
 
 }
