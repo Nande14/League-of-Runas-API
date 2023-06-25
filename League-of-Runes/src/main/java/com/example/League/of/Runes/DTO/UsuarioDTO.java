@@ -1,4 +1,4 @@
-package com.DTO;
+package com.example.League.of.Runes.DTO;
 
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -11,5 +11,6 @@ public class UsuarioDTO{
     private String nome;
     private String email;
     private String senha;
+    private String conta;
 
 }

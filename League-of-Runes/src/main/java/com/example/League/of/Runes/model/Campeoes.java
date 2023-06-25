@@ -1,20 +1,22 @@
 package com.example.League.of.Runes.model;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 
 public class Campeoes {
-    public String nome;
+    private Integer id;
 
-    public String role;
 
     public String funcao;
 
-    public Campeoes(String nome, String role, String funcao) {
-        this.nome = nome;
-        this.role = role;
-        this.funcao = funcao;
-    }
+   
 
     public String getFuncao() {
         return funcao;
@@ -25,8 +27,11 @@ public class Campeoes {
     }
 
     @ManyToOne
-    @JoinColumn(name="guias")
-    private Guias guias;
+    @JoinColumn(name="usuario_conta")
+    private Usuario usuario;
 
+    @ManyToOne
+    @JoinColumn(name="arvoreRunas_id")
+    private ArvoreRunas arvoreRunas;
 
 }

@@ -1,52 +1,27 @@
 package com.example.League.of.Runes.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
 import java.util.List;
-
-import jakarta.persistence.OneToMany;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 
 public class Usuario {
-
-    private String nickname;
-
+    @Id
+    private String nome;
     private String email;
-
     private String senha;
+    private String conta;
 
-    public Usuario(String nickname, String email, String senha) {
-        this.nickname = nickname;
-        this.email = email;
-        this.senha = senha;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-     @OneToMany(mappedBy = "usuario")
-    private List<Guias> guias;
-
-     @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario")
     private List<ArvoreRunas> arvoreRunas;
 
-   
+   @OneToMany(mappedBy="usuario")
+    private List<Campeoes> campeoes;
+
+
 }

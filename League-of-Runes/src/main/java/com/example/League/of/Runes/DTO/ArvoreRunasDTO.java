@@ -1,15 +1,17 @@
-package com.DTO;
+package com.example.League.of.Runes.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class BalanceamentoDTO {
+public class ArvoreRunasDTO {
     private Integer id;
-    private String campeoes;
-    private String guias;
+    private String imagem;
+    private String runas;
     private String usuario;
-    
+    private String tipoDaRuna;
+
 }

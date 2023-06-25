@@ -1,4 +1,4 @@
-package com.DTO;
+package com.example.League.of.Runes.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class CampeoesDTO {
     private Integer id;
-    private String balanceamento;
-    private String guias;
-    private String usuario;
+    private String usuario_conta;
     
 }

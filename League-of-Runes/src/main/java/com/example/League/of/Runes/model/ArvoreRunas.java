@@ -1,5 +1,6 @@
 package com.example.League.of.Runes.model;
 
+import com.example.League.of.Runes.TipoDaRuna;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,24 +16,23 @@ import jakarta.persistence.*;
 @Getter
 @Setter
 
-
-
 public class ArvoreRunas {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    public String nome;
+    private String nome;
 
-    public String cor;
+    private String cor;
 
-    public String tipo;
+    private TipoDaRuna tipoDaRuna;
 
-   
     public ArvoreRunas(String nome, String cor, String tipo) {
         this.nome = nome;
         this.cor = cor;
-        this.tipo = tipo;
-        
+        this.tipoDaRuna = tipoDaRuna;
+
     }
-    
+
     public String getNome() {
         return nome;
     }
@@ -49,19 +49,10 @@ public class ArvoreRunas {
         this.cor = cor;
     }
 
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     @ManyToOne
-    @JoinColumn(name = "usuario")
+    @JoinColumn(name = "usuario_conta")
     private Usuario usuario;
-     
+
     @OneToMany(mappedBy = "arvoreRunas")
     private List<Runas> runas;
 
